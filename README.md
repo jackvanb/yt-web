@@ -1,5 +1,3 @@
-![react-starter](https://user-images.githubusercontent.com/33935506/36640446-894a1a78-1a27-11e8-970a-6cbf95d76799.png)
-
 # React Starter
 
 A basic template that consists of the essential elements that are required to start building a React (v16.4) application using Webpack (v4).
@@ -53,19 +51,13 @@ Follow the following steps to get development environment running.
 * Clone _'react-starter'_ repository from GitHub
 
   ```bash
-  git clone https://github.com/drminnaar/react-starter.git
-  ```
-
-   _OR USING SSH_
-
-  ```bash
-  git clone git@github.com:drminnaar/react-starter.git
+  git clone https://github.com/jackvanb/yt-web.git
   ```
 
 * Install node modules
 
    ```bash
-   cd react-starter
+   cd yt-web
    npm install
    ```
 
