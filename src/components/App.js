@@ -20,6 +20,40 @@ const theme = createMuiTheme({
     }
 });
 
+class Logo extends Component {
+    render() {
+        return(
+            <a className="navDiv1 logo" href="#"> 
+                <IconButton> <a className="logo"></a> </IconButton>
+            </a>
+        );
+    }
+}
+
+class OtherPageButtons extends Component {
+    render() {
+        return(
+            <div className="navDiv2 flex">
+                <Button className="navDiv2button" color="primary">Take the Quiz</Button>
+                <Button className="navDiv2button" color="primary">Meet Our Nutritionists</Button>
+                <Button className="navDiv2button" color="primary">Contact Us</Button>
+            </div>
+        );
+    }
+}
+
+class UserAuthenticationButtons extends Component {
+    render() {
+        return(
+            <div className="navDiv3 flex">
+                <Button className="navDiv3button" variant="raised" color="primary">Sign Up</Button>
+                <div className="navDiv3space"> </div>
+                <Button className="navDiv3button" variant="raised" color="primary">Log In</Button>
+            </div>
+        );
+    }
+}
+
 //NAV BAR
 class NavBar extends Component {
     render() {
@@ -27,19 +61,9 @@ class NavBar extends Component {
             <MuiThemeProvider theme={theme}>
                 <div className="navBackground flex">
                     <Toolbar className="navBar">
-                        <a className="navDiv1 logo" href="#"> 
-                            <IconButton> <a className="logo"></a> </IconButton>
-                        </a>
-                        <div className="navDiv2 flex">
-                            <Button className="navDiv2button" color="primary">Take the Quiz</Button>
-                            <Button className="navDiv2button" color="primary">Meet Our Nutritionists</Button>
-                            <Button className="navDiv2button" color="primary">Contact Us</Button>
-                        </div>
-                        <div className="navDiv3 flex">
-                            <Button className="navDiv3button" variant="raised" color="primary">Sign Up</Button>
-                            <div className="navDiv3space"> </div>
-                            <Button className="navDiv3button" variant="raised" color="primary">Log In</Button>
-                        </div>
+                        <Logo />
+                        <OtherPageButtons />
+                        <UserAuthenticationButtons />
                     </Toolbar>
                 </div>
             </MuiThemeProvider>

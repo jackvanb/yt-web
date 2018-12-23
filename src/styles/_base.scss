@@ -18,13 +18,13 @@ body {
     content: url("../assets/logo.png");
 }
 
-// #################### Nav Bar ####################
-
 .container {
     display: flex;
     height: 120vh;        
     justify-content: center;
 }
+
+// #################### Nav Bar ####################
 
 .navDiv1 {
     height: 80%;
@@ -60,12 +60,6 @@ body {
     background-color: black;
 
     position: fixed;
-}
-
-@media (max-width: 50em) {
-    .navDiv2button {
-        // display: none;
-    }
 }
 
 /* Nav bar notes
