@@ -1,23 +1,68 @@
+// #################### General ####################
+
 body {
-    background-color: $charcoal;
-    font-family: $font-family;
+    background-color: #252525; //rich black
+    // **** font-family: , Tahoma, Sans-Serif;
+    color: #fffafa; //snow
+    margin: 0;
 }
 
-.container {
-    align-items: center;
-    display: flex;
-    flex-flow: column;
-    height: 100vh;        
-    justify-content: center;
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .logo {
-    padding-top: 20px;
+    content: url("../assets/logo.png");
 }
 
-.title {
-    color: $smoke;
-    font-size: 48px;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px black;
+// #################### Nav Bar ####################
+
+.container {
+    display: flex;
+    height: 120vh;        
+    justify-content: center;
 }
+
+.navDiv1 {
+    height: 80%;
+    width: auto;
+}
+
+.navDiv2 {
+    width: 75%;
+}
+
+.navDiv3 {
+    width: 25%;
+}
+
+.navDiv2button {
+    width: 33%;
+    color: #fffafa; //snow
+}
+
+.navDiv3space {
+    width: 15%;
+}
+
+.navBar {
+    width: 100%;
+    max-width: 100em;
+    height: 4em;
+}
+
+.navBackground {
+    width: 100%;
+    height: 4em;
+    background-color: black;
+
+    position: fixed;
+}
+
+/* Nav bar notes
+1. when screen width gets really small (<Hidden />, conditionals, https://material-ui.com/getting-started/supported-components/ (DROPDOWN MENU CASCADE), )
+2. typography safari warning in inspect element
+*/
