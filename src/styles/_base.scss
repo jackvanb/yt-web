@@ -14,10 +14,6 @@ body {
   text-align: center;
 }
 
-.logo {
-    content: url("../assets/logo.png");
-}
-
 .container {
     display: flex;
     height: 120vh;        
@@ -28,6 +24,12 @@ body {
 
 .navDiv1 {
     height: 80%;
+    width: auto;
+}
+
+.logo {
+    content: url("../assets/logo.png");
+    height: 100%;
     width: auto;
 }
 
@@ -62,6 +64,31 @@ body {
     position: fixed;
 }
 
+#mid {
+    width: 50%;
+    background-color: red;
+    height: 200px;
+    margin-top: 70px;
+    position: fixed;
+    z-index: 500;
+}
+
+@media (max-width: 770px) {
+    // .dropDownOtherPage {
+    //     border: 1px solid green;
+    // }
+    // .navDiv1 {
+    //     border: 1px solid green;
+    // }
+    // .navDiv3button {
+    //     float: right;
+    //     border: 1px solid green;
+    // }
+}
+
 /* Nav bar notes
 1. when screen width gets really small
+----A: create drop down menu;
+----B: figure out flex orientation to make one on left, logo in center, and log in on right;
+--fade menu
 */
