@@ -14,10 +14,6 @@ body {
   text-align: center;
 }
 
-.logo {
-    content: url("../assets/logo.png");
-}
-
 // #################### Nav Bar ####################
 
 .container {
@@ -29,6 +25,12 @@ body {
 .navDiv1 {
     height: 80%;
     width: auto;
+}
+
+.logo {
+    height: 100%;
+    width: auto;
+    content: url("../assets/logo.png");
 }
 
 .navDiv2 {
