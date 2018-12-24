@@ -33,6 +33,10 @@ body {
     content: url("../assets/logo.png");
 }
 
+.dropDown {
+    position: absolute;
+}
+
 .navDiv2 {
     width: 75%;
 }
@@ -50,6 +54,10 @@ body {
     width: 15%;
 }
 
+.navDiv3button {
+
+}
+
 .navBar {
     width: 100%;
     max-width: 100em;
@@ -62,6 +70,28 @@ body {
     background-color: black;
 
     position: fixed;
+}
+
+.navSpace {
+    width: 90%;
+}
+
+@media (max-width: 770px) {
+    // .flex {
+    //     display: inline-block;
+    //     align-items: stretch;
+    //     text-align: left;
+    // }
+    .navDiv1 {
+        width: 100%;
+        position: absolute;
+        z-index: 100;
+    }  
+    .navDiv3button {
+        position: relative;
+        float: right;
+        z-index: 101;
+    }
 }
 
 /* Nav bar bugs

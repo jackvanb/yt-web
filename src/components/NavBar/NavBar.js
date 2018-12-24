@@ -23,9 +23,9 @@ const theme = createMuiTheme({
 class Logo extends Component {
     render() {
         return(
-            <a className="navDiv1" href="#"> 
-                <img className="logo"/>
-            </a>
+            <div className="navDiv1"> 
+                <a className="logo" href="#"></a>
+            </div>
         );
     }
 }
@@ -75,14 +75,18 @@ export default class NavBar extends Component {
 
     render() {
         let first = this.state.width > 770 ? <Logo /> : <DropDownMenu />;
-        let second = this.state.width > 770 ? <OtherPageButtons /> : <Logo />;
+        let second = this.state.width > 770 ? <OtherPageButtons /> : undefined;
         let third = this.state.width > 770 ? <SignUpLogInButtons /> : <LogInButton />;
+        let mobileLogo = this.state.width > 770 ? undefined : <Logo />;
+        let mobileSpace = this.state.width > 770 ? undefined : <div className="navSpace" />;
         return(
             <MuiThemeProvider theme={theme}>
                 <div className="navBackground flex">
+                    {mobileLogo}
                     <Toolbar className="navBar">
                         {first}
                         {second}
+                        {mobileSpace}
                         {third}
                     </Toolbar>
                 </div>

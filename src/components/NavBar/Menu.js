@@ -14,7 +14,9 @@ export default class DropDownMenu extends Component {
             // <MenuItem primaryText="Contact Us" />
             // </div>
             // <Menu className="fas fa-bars">
-            <MenuIcon className="fas fa-bars" /> 
+            <div className="dropDown">
+                <MenuIcon className="fas fa-bars apple" /> 
+            </div>
             // </Menu>
         );
     }
