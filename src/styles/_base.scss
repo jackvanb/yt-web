@@ -6,7 +6,7 @@ body {
     color: #fffafa; //snow
     margin: 0;
 }
-
+ 
 .flex {
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@ body {
   text-align: center;
 }
 
-// #################### Nav Bar ####################
+// ####### Nav Bar #######
 
 .container {
     display: flex;
@@ -35,6 +35,68 @@ body {
 
 .dropDown {
     position: absolute;
+    z-index: 101;
+    height: 100%;
+}
+
+.menuIcon {
+    transition: ease-in-out 0.2s; 
+    animation-iteration-count: 1;
+}
+
+//finding a way to add classes to make objects change on click without animations.
+//Or I could find a way to still use animations 
+
+
+
+.menuIconClicked {
+    animation-name: clockwiseSpin90;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.menuIconUnclicked {
+    transform: rotate(0deg);
+    animation-name: counterSpin90;
+    animation-duration: 0.5s;
+    // animation-iteration-count: 1;
+}
+
+.menuList {
+    font-family: "Impact";
+    // font-size: 110%;
+    background-color: black;
+    // background-color: rgba(0, 0, 0, 0.8);
+    width: 0;
+    height: auto;
+    position: fixed;
+    animation-iteration-count: 1;
+    overflow: hidden;
+
+    height: 10em;
+    // border: 1px solid snow;
+}
+
+.menuItem {
+    text-align: center;
+    padding-top: 0.1em;
+    height: 33.33%;
+    width: 100%;
+    color: #fffafa; //snow
+    white-space: nowrap;
+}
+
+.slideIn {
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.slideOut {
+    width: 0;
+    animation-name: slideOut;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 .navDiv2 {
@@ -77,11 +139,6 @@ body {
 }
 
 @media (max-width: 770px) {
-    // .flex {
-    //     display: inline-block;
-    //     align-items: stretch;
-    //     text-align: left;
-    // }
     .navDiv1 {
         width: 100%;
         position: absolute;
@@ -94,7 +151,72 @@ body {
     }
 }
 
+@media (min-width: 770px) {
+    .menuList {
+        display: none;
+    }
+}
+
 /* Nav bar bugs
 1. when screen width gets really small (find menu)
-2. typography safari warning in inspect element
+2. typography safari warning in inspect element & others
 */
+
+// #test {
+//     background-color: blue;
+//     width: 500px;
+//     height: 500px;
+//     position: fixed;
+//     margin-top: 300px;
+
+//     animation-name: clockwiseSpin90;
+//     animation-duration: 4s;
+//     animation-iteration-count: infinite;
+// }
+
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+@keyframes clockwiseSpin90 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes counterSpin90 {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 11rem;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        width: 11rem;
+    }
+    to {
+        width: 0;
+    }
+}
+
+
+//KEEP THIS LAST
+.zeroAnimations {
+    animation-iteration-count: 0;
+}

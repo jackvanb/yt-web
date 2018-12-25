@@ -8,6 +8,9 @@ import Button from '@material-ui/core/Button';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
 
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+
 //THEME FOR NAV BAR
 const theme = createMuiTheme({
     palette: {
@@ -24,7 +27,7 @@ class Logo extends Component {
     render() {
         return(
             <div className="navDiv1"> 
-                <a className="logo" href="#"></a>
+                <a className="logo"></a>
             </div>
         );
     }
@@ -64,24 +67,59 @@ class SignUpLogInButtons extends Component {
     }
 }
 
-//NAV BAR
-export default class NavBar extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {width: 0};
-        this.setSize = this.setSize.bind(this);
+class MenuList extends Component {
+    constructor() {
+        super();
     }
 
     render() {
-        let first = this.state.width > 770 ? <Logo /> : <DropDownMenu />;
-        let second = this.state.width > 770 ? <OtherPageButtons /> : undefined;
-        let third = this.state.width > 770 ? <SignUpLogInButtons /> : <LogInButton />;
-        let mobileLogo = this.state.width > 770 ? undefined : <Logo />;
-        let mobileSpace = this.state.width > 770 ? undefined : <div className="navSpace" />;
+        return(
+            <div className={cx('menuList', {'slideIn': this.props.open}, {'slideOut': !this.props.open}, {'zeroAnimations': this.props.firstTime})} style={{ marginTop: this.props.height}}>
+                <Button className="menuItem flex" color="primary"> Take The Quiz </Button>
+                <Button className="menuItem flex" color="primary"> Meet Our Nutritionists </Button>
+                <Button className="menuItem flex" color="primary"> Contact Us </Button>
+            </div>
+        );
+    }
+}
+
+MenuList.propTypes = {
+    height: PropTypes.number, open: PropTypes.bool, firstTime: PropTypes.bool, 
+};
+
+//NAV BAR
+export default class NavBar extends Component {
+    constructor() {
+        super();
+
+        this.state = {height: 0, openMenu: false, firstTime: true};
+        this.setSize = this.setSize.bind(this);
+        this.menuOpen = this.menuOpen.bind(this);
+        this.resetMenu = this.resetMenu.bind(this);
+    }
+
+    menuOpen() {
+        this.setState((prevState) => {
+            return { firstTime: false, openMenu: prevState.openMenu == true ? false : true};
+        });
+    }
+
+    resetMenu() {
+        this.setState(() => {
+            return { firstTime: true, openMenu: false};
+        });
+    }
+
+    render() {
+        var desktopVsMobile = this.props.width > 770;
+        let first = desktopVsMobile ? <Logo /> : <DropDownMenu menuOpen={this.menuOpen} openMenu={this.state.openMenu} firstTime={this.state.firstTime} resetMenu={this.resetMenu}/>;
+        let second = desktopVsMobile ? <OtherPageButtons /> : undefined;
+        let third = desktopVsMobile ? <SignUpLogInButtons /> : <LogInButton />;
+        let mobileLogo = desktopVsMobile ? undefined : <Logo />;
+        let mobileSpace = desktopVsMobile ? undefined : <div className="navSpace" />;        // if(desktopVsMobile) this.setState({firstTime: true});
         return(
             <MuiThemeProvider theme={theme}>
-                <div className="navBackground flex">
+                <div id="navBack" className="navBackground flex">
                     {mobileLogo}
                     <Toolbar className="navBar">
                         {first}
@@ -90,12 +128,13 @@ export default class NavBar extends Component {
                         {third}
                     </Toolbar>
                 </div>
+                <MenuList height={this.state.height} open={this.state.openMenu} firstTime={this.state.firstTime}> </MenuList>
             </MuiThemeProvider>
         );
     }
 
     setSize() {
-        this.setState({width: window.innerWidth});
+        this.setState({height: document.getElementById('navBack').clientHeight});
     }
 
     componentDidMount() {
@@ -107,3 +146,7 @@ export default class NavBar extends Component {
         window.removeEventListener('resize', this.setSize);
     }
 }
+
+NavBar.propTypes = {
+    width: PropTypes.number,
+};

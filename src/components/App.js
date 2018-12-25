@@ -5,18 +5,31 @@ import NavBar from './NavBar/NavBar.js';
 
 export default class App extends Component {
 
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
-        // this.state = {width: 0};
-        // this.setSize = this.setSize.bind(this);
+        this.state = {width: 0};
+        this.setSize = this.setSize.bind(this);
     }
 
     render() {
         return (
             <div>
-                <NavBar></NavBar>
+                <NavBar width={this.state.width}></NavBar>
             </div>
         );
+    }
+
+    setSize() {
+        this.setState({width: window.innerWidth});
+    }
+
+    componentDidMount() {
+        this.setSize();
+        window.addEventListener('resize', this.setSize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.setSize);
     }
 }
