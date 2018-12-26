@@ -8,13 +8,16 @@ import Button from '@material-ui/core/Button';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
 
+import red from '@material-ui/core/colors';
+
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 //THEME FOR NAV BAR
 const theme = createMuiTheme({
     palette: {
-        primary: {main: '#ffffff'}//'#fffafa'}
+        primary: {main: '#fffafa'},
+        secondary: red,
     },
     typography: {
         fontFamily: [
@@ -27,7 +30,7 @@ class Logo extends Component {
     render() {
         return(
             <div className="navDiv1"> 
-                <a className="logo"></a>
+                <a className="smallLogo"></a>
             </div>
         );
     }
@@ -48,8 +51,7 @@ class OtherPageButtons extends Component {
 class LogInButton extends Component {
     render() {
         return(
-            <Button className="navDiv3button" variant="contained" color="primary">
-            Log In
+            <Button className="navDiv3button" variant="contained" color="primary" size='small'> Log In
             </Button>
         );
     }
@@ -59,7 +61,7 @@ class SignUpLogInButtons extends Component {
     render() {
         return(
             <div className="navDiv3 flex">
-                <Button className="navDiv3button" variant="contained" color="primary">Sign Up</Button>
+                <Button className="navDiv3button" variant="contained" color="primary" size='small'> Sign Up </Button>
                 <div className="navDiv3space"> </div>
                 <LogInButton />
             </div>
@@ -111,7 +113,7 @@ export default class NavBar extends Component {
     }
 
     render() {
-        var desktopVsMobile = this.props.width > 770;
+        var desktopVsMobile = this.props.width > 600;
         let first = desktopVsMobile ? <Logo /> : <DropDownMenu menuOpen={this.menuOpen} openMenu={this.state.openMenu} firstTime={this.state.firstTime} resetMenu={this.resetMenu}/>;
         let second = desktopVsMobile ? <OtherPageButtons /> : undefined;
         let third = desktopVsMobile ? <SignUpLogInButtons /> : <LogInButton />;
