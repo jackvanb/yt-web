@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 
 import NavBar from './NavBar/NavBar.js';
+import PropTypes from 'prop-types';
+
 import Background from './Background.js';
 
 export default class App extends Component {
@@ -17,7 +19,7 @@ export default class App extends Component {
         return (
             <div>
                 <NavBar width={this.state.width}></NavBar>
-                <Background width={this.state.width}/>
+                <Background width={this.state.width} />
             </div>
         );
     }
@@ -35,3 +37,7 @@ export default class App extends Component {
         window.removeEventListener('resize', this.setSize);
     }
 }
+
+App.propTypes = {
+    children: PropTypes.element.isRequired,
+};

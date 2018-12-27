@@ -1,21 +1,15 @@
 // PACKAGE DEPENDENCIES
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// COMPONENTS
-
-import App from './components/App';
-
 // STYLES
 
 import 'normalize.css';
 import './styles/app.scss';
 
-// function scrollToMission() {
-// 	document.getElementById("test").style.backgroundColor = "red";
-//     // $('html, body').animate({
-//             // scrollTop: $("#missionDiv").offset().top}, 1500, "swing");
-// }
+import App from './components/App.js';
 
+// You can choose your kind of history here (e.g. browserHistory)
+// Your routes.js file
+// import routes from './routes';
 
 ReactDOM.render(<App />, document.getElementById('app'));

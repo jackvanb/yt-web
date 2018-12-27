@@ -3,7 +3,6 @@ import HomePage from './HomePage.js';
 import PropTypes from 'prop-types';
 
 export default class Background extends Component {
-
     render() {
         return (
             <div className="background">

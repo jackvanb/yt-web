@@ -53,7 +53,7 @@ export default class HomePage extends Component {
                     <div className="missionStatement flex">
                         <div className={cx('missionLogo', {'missionLogoSmall': mobileVsDesktop})}/>
                         <h2 className="missionP">
-                            At YouTrition, we believe that work too hard to reach anything less than your maximum potential, but training is only half the battle.
+                            At YouTrition, we believe that you work too hard to reach anything less than your maximum potential, but training is only half the battle.
                             Nutrition is just as important, so we aim to help athletes and bodybuilders obtain optimal results by providing them with the most effective
                             personalized workout supplements on the work.
                         </h2>
