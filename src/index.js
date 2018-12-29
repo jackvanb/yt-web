@@ -1,6 +1,7 @@
 // PACKAGE DEPENDENCIES
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 // STYLES
 
 import 'normalize.css';
@@ -12,4 +13,9 @@ import App from './components/App.js';
 // Your routes.js file
 // import routes from './routes';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    document.getElementById('app')
+);

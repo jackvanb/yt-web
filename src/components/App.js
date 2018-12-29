@@ -5,27 +5,29 @@ import NavBar from './NavBar/NavBar.js';
 import PropTypes from 'prop-types';
 
 import Background from './Background.js';
+import { Switch, Route } from 'react-router-dom';
 
 export default class App extends Component {
-
     constructor() {
         super();
 
-        this.state = {width: 0};
+        this.state = { width: 0 };
         this.setSize = this.setSize.bind(this);
     }
 
     render() {
         return (
             <div>
-                <NavBar width={this.state.width}></NavBar>
-                <Background width={this.state.width} />
+                <NavBar width={this.state.width} />
+                <Switch>
+                    <Route exact path="/" component={Background} />
+                </Switch>
             </div>
         );
     }
 
     setSize() {
-        this.setState({width: window.innerWidth});
+        this.setState({ width: window.innerWidth });
     }
 
     componentDidMount() {
@@ -39,5 +41,5 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.element.isRequired
 };
