@@ -1,10 +1,10 @@
 // #################### General ####################
 
 body {
-    background-color: #252525; //rich black
-    // **** font-family: , Tahoma, Sans-Serif;
-    color: #fffafa; //snow
-    margin: 0;
+  background-color: #252525; //rich black
+  // **** font-family: , Tahoma, Sans-Serif;
+  color: #fffafa; //snow
+  margin: 0;
 }
 
 .flex {
@@ -14,81 +14,209 @@ body {
   text-align: center;
 }
 
+// ####### Nav Bar #######
+
 .container {
-    display: flex;
-    height: 120vh;        
-    justify-content: center;
+  display: flex;
+  height: 120vh;
+  justify-content: center;
 }
 
-// #################### Nav Bar ####################
-
 .navDiv1 {
-    height: 80%;
-    width: auto;
+  height: 80%;
+  width: auto;
 }
 
 .logo {
-    content: url("../assets/logo.png");
-    height: 100%;
-    width: auto;
+  height: 100%;
+  width: auto;
+  content: url("../assets/logo.png");
+}
+
+.dropDown {
+  position: absolute;
+  z-index: 101;
+  height: 100%;
+}
+
+.menuIcon {
+  transition: ease-in-out 0.2s;
+  animation-iteration-count: 1;
+}
+
+//finding a way to add classes to make objects change on click without animations.
+//Or I could find a way to still use animations
+
+.menuIconClicked {
+  animation-name: clockwiseSpin90;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.menuIconUnclicked {
+  transform: rotate(0deg);
+  animation-name: counterSpin90;
+  animation-duration: 0.5s;
+  // animation-iteration-count: 1;
+}
+
+.menuList {
+  font-family: "Impact";
+  // font-size: 110%;
+  background-color: black;
+  // background-color: rgba(0, 0, 0, 0.8);
+  width: 0;
+  height: auto;
+  position: fixed;
+  animation-iteration-count: 1;
+  overflow: hidden;
+
+  height: 10em;
+  // border: 1px solid snow;
+}
+
+.menuItem {
+  text-align: center;
+  padding-top: 0.1em;
+  height: 33.33%;
+  width: 100%;
+  color: #fffafa; //snow
+  white-space: nowrap;
+}
+
+.slideIn {
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.slideOut {
+  width: 0;
+  animation-name: slideOut;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 
 .navDiv2 {
-    width: 75%;
+  width: 75%;
 }
 
 .navDiv3 {
-    width: 25%;
+  width: 25%;
 }
 
 .navDiv2button {
-    width: 33%;
-    color: #fffafa; //snow
+  width: 33%;
+  color: #fffafa; //snow
 }
 
 .navDiv3space {
-    width: 15%;
+  width: 15%;
+}
+
+.navDiv3button {
 }
 
 .navBar {
-    width: 100%;
-    max-width: 100em;
-    height: 4em;
+  width: 100%;
+  max-width: 100em;
+  height: 4em;
 }
 
 .navBackground {
-    width: 100%;
-    height: 4em;
-    background-color: black;
+  width: 100%;
+  height: 4em;
+  background-color: black;
 
-    position: fixed;
+  position: fixed;
 }
 
-#mid {
-    width: 50%;
-    background-color: red;
-    height: 200px;
-    margin-top: 70px;
-    position: fixed;
-    z-index: 500;
+.navSpace {
+  width: 90%;
 }
 
 @media (max-width: 770px) {
-    // .dropDownOtherPage {
-    //     border: 1px solid green;
-    // }
-    // .navDiv1 {
-    //     border: 1px solid green;
-    // }
-    // .navDiv3button {
-    //     float: right;
-    //     border: 1px solid green;
-    // }
+  .navDiv1 {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+  }
+  .navDiv3button {
+    position: relative;
+    float: right;
+    z-index: 101;
+  }
 }
 
-/* Nav bar notes
-1. when screen width gets really small
-----A: create drop down menu;
-----B: figure out flex orientation to make one on left, logo in center, and log in on right;
---fade menu
+@media (min-width: 770px) {
+  .menuList {
+    display: none;
+  }
+}
+
+/* Nav bar bugs
+1. when screen width gets really small (find menu)
+2. typography safari warning in inspect element & others
 */
+
+// #test {
+//     background-color: blue;
+//     width: 500px;
+//     height: 500px;
+//     position: fixed;
+//     margin-top: 300px;
+
+//     animation-name: clockwiseSpin90;
+//     animation-duration: 4s;
+//     animation-iteration-count: infinite;
+// }
+
+@keyframes example {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+@keyframes clockwiseSpin90 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes counterSpin90 {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 11rem;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    width: 11rem;
+  }
+  to {
+    width: 0;
+  }
+}
+
+//KEEP THIS LAST
+.zeroAnimations {
+  animation-iteration-count: 0;
+}
