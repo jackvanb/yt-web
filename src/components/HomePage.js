@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import cx from 'classnames';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 function scrollToMission() {
     $('html, body').animate({
@@ -15,13 +14,14 @@ function scrollToAbout() {
 
 export default class HomePage extends Component {
     render() {
-        var mobileVsDesktop = this.props.width < 600;
         return (
             <div className="homePage">
-                <h1 className="y"> Y</h1>
-                <h1 className="ou">OU</h1> 
-                <h1 className="t">T</h1>
-                <h1 className="rition">RITION</h1>
+                <div className="youtrition">
+                    <h1 className="y"> Y</h1>
+                    <h1 className="ou">OU</h1> 
+                    <h1 className="t">T</h1>
+                    <h1 className="rition">RITION</h1>
+                </div>
                 <div className="stepsDiv">
                     <div className="steps flex">
                         <a className="step flex" href="#">
@@ -51,7 +51,7 @@ export default class HomePage extends Component {
                         <h2 id="missionText"> &darr; OUR MISSION &darr;</h2>
                     </a>
                     <div className="missionStatement flex">
-                        <div className={cx('missionLogo', {'missionLogoSmall': mobileVsDesktop})}/>
+                        <div className="missionLogo" />
                         <h2 className="missionP">
                             At YouTrition, we believe that you work too hard to reach anything less than your maximum potential, but training is only half the battle.
                             Nutrition is just as important, so we aim to help athletes and bodybuilders obtain optimal results by providing them with the most effective
@@ -71,8 +71,8 @@ export default class HomePage extends Component {
     }
 }
 
-HomePage.propTypes = {
-    width: PropTypes.number,
-};
+// HomePage.propTypes = {
+//     width: PropTypes.number,
+// };
 
 

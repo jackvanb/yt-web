@@ -8,16 +8,16 @@ import Button from '@material-ui/core/Button';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
 
-import red from '@material-ui/core/colors';
-
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
+import { Link } from 'react-router-dom';
+
 
 //THEME FOR NAV BAR
 const theme = createMuiTheme({
     palette: {
         primary: {main: '#fffafa'},
-        secondary: red,
     },
     typography: {
         fontFamily: [
@@ -42,7 +42,7 @@ class OtherPageButtons extends Component {
             <div className="navDiv2 flex">
                 <Button className="navDiv2button" color="primary">Take the Quiz</Button>
                 <Button className="navDiv2button" color="primary">Meet Our Nutritionists</Button>
-                <Button className="navDiv2button" color="primary">Contact Us</Button>
+                <Button className="navDiv2button" color="primary"><Link to='/second'>Contact Us</Link></Button>
             </div>
         );
     }

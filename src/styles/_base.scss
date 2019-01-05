@@ -1,13 +1,14 @@
 /* BUGS
 NAV BAR: typography safari warning in inspect element & others
 HEIGHT OF STEPS: how much of the screen do we want it? vh isn't reliable enough i think. do research;
+MAKE LOG IN LINE UP WITH RIGHT END OF STEPS
 */
 
 // #################### General ####################
 
 body {
     background-color: #252525; //rich black
-    // **** font-family: , Tahoma, Sans-Serif;
+    font-family: "Impact" , Sans-Serif;
     color: #fffafa; //snow
     scroll-behavior: smooth;
     margin: 0;
@@ -155,7 +156,8 @@ a {
 
 .spaceForNav {
     width: 100%;
-    height: 5em;
+    height: 4em;
+    background-color: red;
     // background-color: #252525; //rich black
     // background-color: black;
 }
@@ -174,6 +176,10 @@ a {
     background-color: #252525; //rich black
     background-image: url("../assets/slate.jpg");
     background-size: 33%;
+}
+
+.youtrition {
+    margin-top: 1em;
 }
 
 .y {
@@ -307,7 +313,7 @@ a {
     width: 100%;
     height: 90vh;
     flex-direction: column;
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
 }
 
 #aboutText {
@@ -380,11 +386,6 @@ a {
     .menuList {
         display: none;
     }
-}
-
-@keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
 }
 
 @keyframes clockwiseSpin90 {
