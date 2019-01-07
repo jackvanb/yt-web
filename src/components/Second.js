@@ -5,12 +5,10 @@ export default class Second extends Component {
     render() {
         return (
             <div>
-                <h2> HELLOOOO </h2>
-                <h1> hellooooo </h1>
-                <h1> hellooooo </h1>
-                <h1> hellooooo </h1>
-                <h1> hellooooo </h1>
-                <h1> hellooooo </h1>
+                <h2> TesSTING </h2>
+                <h2> TesSTING </h2>
+                <h2> TesSTING </h2>
+                <h2> TesSTING </h2>
             </div>
         );
     }
