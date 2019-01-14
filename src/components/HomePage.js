@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
-import cx from 'classnames';
 import PropTypes from 'prop-types';
+// import cx from 'classnames';
+import $ from 'jquery';
+
 
 function scrollToMission() {
     $('html, body').animate({
@@ -15,13 +16,15 @@ function scrollToAbout() {
 
 export default class HomePage extends Component {
     render() {
-        var mobileVsDesktop = this.props.width < 600;
+        // var mobileVsDesktop = this.props.width < 600;
         return (
             <div className="homePage">
-                <h1 className="y"> Y</h1>
-                <h1 className="ou">OU</h1> 
-                <h1 className="t">T</h1>
-                <h1 className="rition">RITION</h1>
+                <div className="youtrition">
+                    <h1 className="y"> Y</h1>
+                    <h1 className="ou">OU</h1> 
+                    <h1 className="t">T</h1>
+                    <h1 className="rition">RITION</h1>
+                </div>
                 <div className="stepsDiv">
                     <div className="steps flex">
                         <a className="step flex" href="#">
@@ -50,26 +53,95 @@ export default class HomePage extends Component {
                     <a onClick={scrollToMission}>
                         <h2 id="missionText"> &darr; OUR MISSION &darr;</h2>
                     </a>
-                    <div className="missionStatement flex">
-                        <div className={cx('missionLogo', {'missionLogoSmall': mobileVsDesktop})}/>
-                        <h2 className="missionP">
-                            At YouTrition, we believe that you work too hard to reach anything less than your maximum potential, but training is only half the battle.
-                            Nutrition is just as important, so we aim to help athletes and bodybuilders obtain optimal results by providing them with the most effective
-                            personalized workout supplements on the work.
-                        </h2>
+                    <div className="statement flex">
+                        <img className="missionLogo" />
+                        <div className="missionPbox flex">
+                            <p className="missionP">
+                                At YouTrition, we believe that you work too hard to reach anything less than your maximum potential, but training is only half the battle.
+                                Nutrition is just as important, so we aim to help athletes and bodybuilders obtain optimal results by providing them with the most effective
+                                personalized workout supplements on the work.
+                            </p>
+                        </div>  
                     </div>
                 </div>
-                <div id="aboutDiv" className="aboutDiv">
+                <div id="aboutDiv" className="aboutDiv flex">
                     <a onClick={scrollToAbout}>
                         <h2 id="aboutText"> &darr; ABOUT US &darr;</h2>
                     </a>
-                    <div className="missionStatement flex">
+                    <div className="statement aboutStatement flex">
+                        <div className="aboutCard" >
+                            <div className="aboutInnerCard flex">
+                                <div className="cardImg" />
+                                <div className="cardFade flex">
+                                    <div className="cardWhite" />
+                                    <div className="cardNotFade" />
+                                </div>
+                                <div className="cardPortrait" />
+                                <div className="cardText">
+                                    <h2> Ben Spievak </h2>
+                                    <p className="role"> Founder and CEO </p>
+                                    My name is Yash Moondhra. I am a student at University of California, Los Angeles. The protein shake bottle is black and yellow with a little of salt.
+                                </div>
+                            </div>
+                        </div>
+                        <div className="aboutCard" >
+                            <div className="aboutInnerCard flex">
+                                <div className="cardImg" />
+                                <div className="cardFade flex">
+                                    <div className="cardWhite" />
+                                    <div className="cardNotFade" />
+                                </div>
+                                <div className="cardPortrait" />
+                                <div className="cardText">
+                                    <h2> Jack Von </h2>
+                                    <p className="role"> Founder and CEO </p>
+                                    My name is Yash Moondhra. I am a student at University of California, Los Angeles. The protein shake bottle is black and yellow with a little of salt.
+                                </div>
+                            </div>
+                        </div>
+                        <div className="aboutCard" >
+                            <div className="aboutInnerCard flex">
+                                <div className="cardImg" />
+                                <div className="cardFade flex">
+                                    <div className="cardWhite" />
+                                    <div className="cardNotFade" />
+                                </div>
+                                <div className="cardPortrait" />
+                                <div className="cardText">
+                                    <h2> Yash Moondhra </h2>
+                                    <p className="role"> Founder and CEO </p>
+                                    My name is Yash Moondhra. I am a student at University of California, Los Angeles. The protein shake bottle is black and yellow with a little of salt.
+                                </div>
+                            </div>
+                        </div>
+                        <div className="aboutCard" >
+                            <div className="aboutInnerCard flex">
+                                <div className="cardImg" />
+                                <div className="cardFade flex">
+                                    <div className="cardWhite" />
+                                    <div className="cardNotFade" />
+                                </div>
+                                <div className="cardPortrait" />
+                                <div className="cardText">
+                                    <h2> ?Chandler Spelling ? </h2>
+                                    <p className="role"> Founder and CEO </p>
+                                    My name is Yash Moondhra. I am a student at University of California, Los Angeles. The protein shake bottle is black and yellow with a little of salt.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         );
     }
 }
+
+/*                        <div className={cx('missionLogo', {'missionLogoSmall': mobileVsDesktop})}/>
+                        <h2 className="missionP">
+                            At YouTrition, we believe that you work too hard to reach anything less than your maximum potential, but training is only half the battle.
+                            Nutrition is just as important, so we aim to help athletes and bodybuilders obtain optimal results by providing them with the most effective
+                            personalized workout supplements on the work.
+                        </h2> */
 
 HomePage.propTypes = {
     width: PropTypes.number,

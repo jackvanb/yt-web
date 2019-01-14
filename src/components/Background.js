@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 export default class Background extends Component {
     render() {
         return (
-            <div className="background">
+            <div className="page">
+                <div id="background"> </div>
                 <div className="spaceForNav"/>
                 <HomePage width={this.props.width}/>
             </div>

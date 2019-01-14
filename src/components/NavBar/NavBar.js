@@ -8,8 +8,6 @@ import Button from '@material-ui/core/Button';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
 
-import red from '@material-ui/core/colors';
-
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
@@ -17,12 +15,17 @@ import { NavLink } from 'react-router-dom';
 //THEME FOR NAV BAR
 const theme = createMuiTheme({
     palette: {
-        primary: { main: '#fffafa' },
-        secondary: red
+        primary: {main: '#fffafa'}
     },
     typography: {
-        fontFamily: ['impact', 'sans-serif'].join(',')
-    }
+        useNextVariants: true,
+        fontFamily: ['impact', 'helvetica', 'sans-serif'].join(','),
+    },
+    // overrides: {
+    //     Button: {
+    //         fontWeight: 700,
+    //     }
+    // },
 });
 
 class Logo extends Component {
@@ -42,18 +45,27 @@ class OtherPageButtons extends Component {
         return (
             <div className="navDiv2 flex">
                 <Button className="navDiv2button" color="primary">
-                    <NavLink to="/quiz">Take the Quiz</NavLink>
+                    Take The Quiz
                 </Button>
                 <Button className="navDiv2button" color="primary">
-                    <NavLink to="/nutritionists">Meet Our Nutritionists</NavLink>
+                    Meet Our Nutritionists
                 </Button>
                 <Button className="navDiv2button" color="primary">
-                    <NavLink to="/contact">Contact Us</NavLink>
+                    <NavLink style={{ color: 'inherit'}} to="/contact">Contact Us</NavLink>
                 </Button>
+
             </div>
         );
     }
 }
+
+/*<Button className="navDiv2button" color="primary">
+    <NavLink to="/nutritionists">Meet Our Nutritionists</NavLink>
+</Button>
+<Button className="navDiv2button" color="primary">
+    <NavLink to="/contact">Contact Us</NavLink>
+</Button>
+*/
 
 class LogInButton extends Component {
     render() {

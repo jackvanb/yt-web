@@ -1,5 +1,4 @@
 /* BUGS
-NAV BAR: typography safari warning in inspect element & others
 HEIGHT OF STEPS: how much of the screen do we want it? vh isn't reliable enough i think. do research;
 MAKE LOG IN LINE UP WITH RIGHT END OF STEPS
 */
@@ -8,16 +7,14 @@ MAKE LOG IN LINE UP WITH RIGHT END OF STEPS
 
 body {
     background-color: #252525; //rich black
-    font-family: "Impact" , Sans-Serif;
+    font-family: 'Verdana', 'Helvetica', 'Arial', 'sans-serif';
     color: #fffafa; //snow
     scroll-behavior: smooth;
     margin: 0;
 }
 
 h1 {
-    font-family: "Impact";
     display: inline;
-    color: #E5BA5C;
     font-size: 350%;
 }
 
@@ -26,7 +23,6 @@ h2 {
 }
 
 h4 {
-    font-family: "Impact";
     margin-top: 0;
 }
 
@@ -40,6 +36,14 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.page {
+width: 100%;
+  // height: 300vh;
+  position: absolute;
+  overflow: hidden;
+  min-width: 10em;
 }
 
 // ####### Nav Bar #######
@@ -84,7 +88,6 @@ a {
 }
 
 .menuList {
-    font-family: "Impact";
     background-color: black;
     // background-color: rgba(0, 0, 0, 0.8);
     width: 0;
@@ -156,10 +159,7 @@ a {
 
 .spaceForNav {
     width: 100%;
-    height: 4em;
-    background-color: red;
-    // background-color: #252525; //rich black
-    // background-color: black;
+    height: 5em;
 }
 
 
@@ -172,39 +172,50 @@ a {
     margin-top: 300px;
 }
 
-.background {
+#background {  
+    width: 100%;
+    height: 300%;
+    position: absolute;
+    z-index: -10;
+
     background-color: #252525; //rich black
     background-image: url("../assets/slate.jpg");
     background-size: 33%;
+    background-repeat: repeat-x repeat-y;
 }
 
 .youtrition {
     margin-top: 1em;
+    margin-bottom: 1.5em;
+    font-size: 110%;
+    color: #E5BA5C;
 }
 
 .y {
-    font-size: 430%;
+    font-size: 480%;
 }
 
 .t {
-    font-size: 430%;
+    font-size: 480%;
 }
 
 .homePage {
     width: 100%;
     height: auto;
     text-align: center;
+    font-family: "Impact";
 }
 
 .stepsDiv {
     margin-top: 1em;
     margin-bottom: 1.5em;
     width: 100%;
-    height: 60vh;
+    height: 55vh;
 
     display: flex;
     justify-content: center;
     min-height: 20em;
+    max-width: 100em;
 }
 
 .steps {
@@ -214,7 +225,8 @@ a {
     background-color: black;
     background-color: rgba(0,0,0, 0.6);
     border-radius: 3%;
-    font-family: "Impact";
+    z-index: 50;
+    // filter: drop-shadow(0 0 10px #ffffff);
 }
 
 .step {
@@ -263,19 +275,19 @@ a {
 }
 
 .missionDiv {
-    // background-color: snow;
-    // background-color: rgba(255,255,255, 0.85);
     width: 100%;
-    height: 75vh;
+    height: 80vh;
     flex-direction: column;
+    max-width: 100em;
 }
 
 #missionText {
-    font-family: "Impact";
     padding-top: 0.7em;
     color: snow;
     transition: ease-in-out 0.3s;
     height: 1em;
+    z-index: 100;
+    position: relative;
 }
 
 #missionText:hover {
@@ -284,40 +296,45 @@ a {
 }
 
 .missionLogo {
-    width: 90%;
-    height: 100%;
-    background-image: url("../assets/logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    opacity: 0.8;
+    content: url("../assets/ytt2.png");
+
+    width: 50%;
+    opacity: 0.5;
+    filter: brightness(50%) drop-shadow(-10px 5px 5px #4444dd);
+    z-index: 0;
+
 }
 
-.missionStatement {
-    font-family: "Impact";
+.statement {
     color: snow;
     height: 100%;
-    padding: 0.5em;
     width: 100%;
+    justify-content: center;
+}
+
+.missionPbox {
+    text-align: right;
+    width: 50%;
 }
 
 .missionP {
-    position: absolute;
+    width: 90%;
+    font-size: 130%;
+    z-index: 5;
+    font-family: "Futura";
+    width: 100%;
+    margin: 0.5em;
     max-width: 25em;
-    padding: 0.5em;
+    min-width: 13em;
 }
 
 .aboutDiv {
-    // background-color: snow;
-    // background-color: rgba(255,255,255, 0.85);
     width: 100%;
     height: 90vh;
     flex-direction: column;
-    // border: 1px solid yellow;
 }
 
 #aboutText {
-    font-family: "Impact";
     padding-top: 0.7em;
     color: snow;
     transition: ease-in-out 0.3s;
@@ -329,8 +346,79 @@ a {
     transition: ease-in-out 0.3s;
 }
 
-#aboutContent {
+.aboutStatement {
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
 
+    justify-content: space-around;
+}
+
+.aboutCard {
+    position: relative;
+    width: 40%;
+    height: 40%;
+    max-width: 35em;
+}
+
+.aboutInnerCard {
+    width: 100%;
+    height: 100%;
+}
+
+.cardImg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/yellowToBlue.jpg");
+    background-size: cover;
+    filter: brightness(50%) saturate(300%) grayscale(90%) opacity(0.8);
+}
+
+.cardFade {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.cardWhite {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.7);
+}
+
+.cardNotFade {
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    // background-color: rgba(255,255,255, 0.8);
+}
+
+.cardPortrait {
+    z-index: 3;
+    width: 50%;
+    height: 90%;
+
+    background-image: url("../assets/prof1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cardText {
+    z-index: 4;
+    width: 50%;
+    height: 90%;
+    padding: 0.5em;
+    font-family: "Futura";
+    color: white;
+    max-width: 15em;
+}
+
+.role {
+    font-style: italic;
 }
 
 @media (max-width: 600px) {
@@ -380,6 +468,14 @@ a {
         z-index: 101;
         color: black;
     }
+    .missionLogo {
+        position: absolute;
+        opacity: 0.25;
+    }
+    .missionP {
+        text-align: center;
+    }
+
 }
 
 @media (min-width: 600px) {
