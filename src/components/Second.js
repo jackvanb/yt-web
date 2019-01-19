@@ -4,11 +4,15 @@ import React, { Component } from 'react';
 export default class Second extends Component {
     render() {
         return (
-            <div>
-                <h2> TesSTING </h2>
-                <h2> TesSTING </h2>
-                <h2> TesSTING </h2>
-                <h2> TesSTING </h2>
+            <div className="page">
+                <div id="background"> </div>
+                <div className="spaceForNav"/>
+                <div className="youtrition">
+                    <h1 className="y"> Y</h1>
+                    <h1 className="ou">OU</h1> 
+                    <h1 className="t">T</h1>
+                    <h1 className="rition">RITION</h1>
+                </div>
             </div>
         );
     }
