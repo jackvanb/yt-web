@@ -18,7 +18,9 @@ export default class HomePage extends Component {
     render() {
         // var mobileVsDesktop = this.props.width < 600;
         return (
-            <div className="homePage">
+            <div className="homePage page">
+                <div id="background"> </div>
+                <div className="spaceForNav"/>
                 <div className="youtrition">
                     <h1 className="y"> Y</h1>
                     <h1 className="ou">OU</h1> 
