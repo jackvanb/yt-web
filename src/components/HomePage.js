@@ -69,14 +69,14 @@ export default class HomePage extends Component {
                         <h2 id="aboutText"> &darr; ABOUT US &darr;</h2>
                     </a>
                     <div className="statement aboutStatement flex">
-                        <div className="aboutCard" >
+                        <div className="aboutCard">
                             <div className="aboutInnerCard flex">
                                 <div className="cardImg" />
                                 <div className="cardFade flex">
                                     <div className="cardWhite" />
                                     <div className="cardNotFade" />
                                 </div>
-                                <div className="cardPortrait" />
+                                <div className="cardPortrait" id="ben" />
                                 <div className="cardText">
                                     <h2> Ben Spievak </h2>
                                     <p className="role"> Founder and CEO </p>
@@ -91,10 +91,10 @@ export default class HomePage extends Component {
                                     <div className="cardWhite" />
                                     <div className="cardNotFade" />
                                 </div>
-                                <div className="cardPortrait" />
+                                <div className="cardPortrait" id="jack" />
                                 <div className="cardText">
-                                    <h2> Jack Von </h2>
-                                    <p className="role"> Founder and CEO </p>
+                                    <h2> Jack Van Boening </h2>
+                                    <p className="role"> Technical Director </p>
                                     My name is Yash Moondhra. I am a student at University of California, Los Angeles. The protein shake bottle is black and yellow with a little of salt.
                                 </div>
                             </div>
@@ -106,11 +106,11 @@ export default class HomePage extends Component {
                                     <div className="cardWhite" />
                                     <div className="cardNotFade" />
                                 </div>
-                                <div className="cardPortrait" />
+                                <div className="cardPortrait" id="yash" />
                                 <div className="cardText">
                                     <h2> Yash Moondhra </h2>
-                                    <p className="role"> Founder and CEO </p>
-                                    My name is Yash Moondhra. I am a student at University of California, Los Angeles. The protein shake bottle is black and yellow with a little of salt.
+                                    <p className="role"> Software Developer </p>
+                                    Yash is a student at UCLA majoring in Computer Science. His favorite protein supplement is Double Chocolate Gold Standard Whey. 
                                 </div>
                             </div>
                         </div>
@@ -121,9 +121,9 @@ export default class HomePage extends Component {
                                     <div className="cardWhite" />
                                     <div className="cardNotFade" />
                                 </div>
-                                <div className="cardPortrait" />
+                                <div className="cardPortrait" id="chandler" />
                                 <div className="cardText">
-                                    <h2> ?Chandler Spelling ? </h2>
+                                    <h2> Chandler Fournier </h2>
                                     <p className="role"> Founder and CEO </p>
                                     My name is Yash Moondhra. I am a student at University of California, Los Angeles. The protein shake bottle is black and yellow with a little of salt.
                                 </div>

@@ -330,7 +330,7 @@ width: 100%;
 
 .aboutDiv {
     width: 100%;
-    height: 90vh;
+    height: auto;
     flex-direction: column;
 }
 
@@ -357,8 +357,10 @@ width: 100%;
 .aboutCard {
     position: relative;
     width: 40%;
-    height: 40%;
-    max-width: 35em;
+    height: 15em;
+    min-width: 30em;
+    max-width: 37em;
+    margin: 1em;
 }
 
 .aboutInnerCard {
@@ -373,7 +375,7 @@ width: 100%;
     height: 100%;
     background-image: url("../assets/yellowToBlue.jpg");
     background-size: cover;
-    filter: brightness(50%) saturate(300%) grayscale(90%) opacity(0.8);
+    filter: brightness(50%) saturate(300%) grayscale(90%) opacity(0.7);
 }
 
 .cardFade {
@@ -386,13 +388,13 @@ width: 100%;
 .cardWhite {
     width: 50%;
     height: 100%;
-    background-color: rgba(0,0,0, 0.7);
+    background-color: rgba(0,100,250, 0.4);
 }
 
 .cardNotFade {
     width: 50%;
     height: 100%;
-    background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    background-image: linear-gradient(to right, rgba(0,100,250,0.4), rgba(0,0,0,0));
     // background-color: rgba(255,255,255, 0.8);
 }
 
@@ -405,6 +407,22 @@ width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+#ben {
+    background-image: url("../assets/ben.jpg");
+}
+
+#yash {
+    background-image: url("../assets/yash.jpg");
+}
+
+#jack {
+    background-image: url("../assets/jack.jpg");
+}
+
+#chandler {
+    // background-image: url("../assets/chandler.jpg");
 }
 
 .cardText {
@@ -475,7 +493,35 @@ width: 100%;
     .missionP {
         text-align: center;
     }
-
+    .aboutCard {
+        width: 80%;
+        height: 27em;
+        min-width: 15em;
+        max-width: 20em;
+    }
+    .aboutInnerCard {
+        flex-direction: column;
+    }
+    .cardFade {
+        flex-direction: column;
+    }
+    .cardWhite {
+        width: 100%;
+        height: 50%;
+    }
+    .cardNotFade {
+        background-image: linear-gradient(to bottom, rgba(0,100,250,0.4), rgba(0,0,0,0));
+        width: 100%;
+        height: 50%;
+    }
+    .cardPortrait {
+        width: 90%;
+        height: 40%;
+    }
+    .cardText {
+        width: 90%;
+        height: 50%;
+    }
 }
 
 @media (min-width: 600px) {
