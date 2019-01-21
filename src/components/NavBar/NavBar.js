@@ -10,22 +10,31 @@ import { createMuiTheme } from "@material-ui/core/styles";
 
 import PropTypes from "prop-types";
 import cx from "classnames";
+import { NavLink } from "react-router-dom";
 
 //THEME FOR NAV BAR
 const theme = createMuiTheme({
   palette: {
-    primary: { main: "#ffffff" } //'#fffafa'}
+    primary: { main: "#fffafa" }
   },
   typography: {
-    fontFamily: ["impact", "sans-serif"].join(",")
+    useNextVariants: true,
+    fontFamily: ["impact", "helvetica", "sans-serif"].join(",")
   }
+  // overrides: {
+  //     Button: {
+  //         fontWeight: 700,
+  //     }
+  // },
 });
 
 class Logo extends Component {
   render() {
     return (
       <div className="navDiv1">
-        <a className="logo" />
+        <NavLink to="/">
+          <a className="smallLogo" />
+        </NavLink>
       </div>
     );
   }
@@ -36,23 +45,39 @@ class OtherPageButtons extends Component {
     return (
       <div className="navDiv2 flex">
         <Button className="navDiv2button" color="primary">
-          Take the Quiz
+          Take The Quiz
         </Button>
         <Button className="navDiv2button" color="primary">
           Meet Our Nutritionists
         </Button>
         <Button className="navDiv2button" color="primary">
-          Contact Us
+          <NavLink style={{ color: "inherit" }} to="/contact">
+            Contact Us
+          </NavLink>
         </Button>
       </div>
     );
   }
 }
 
+/*<Button className="navDiv2button" color="primary">
+    <NavLink to="/nutritionists">Meet Our Nutritionists</NavLink>
+</Button>
+<Button className="navDiv2button" color="primary">
+    <NavLink to="/contact">Contact Us</NavLink>
+</Button>
+*/
+
 class LogInButton extends Component {
   render() {
     return (
-      <Button className="navDiv3button" variant="contained" color="primary">
+      <Button
+        className="navDiv3button"
+        variant="contained"
+        color="primary"
+        size="small"
+      >
+        {" "}
         Log In
       </Button>
     );
@@ -63,8 +88,14 @@ class SignUpLogInButtons extends Component {
   render() {
     return (
       <div className="navDiv3 flex">
-        <Button className="navDiv3button" variant="contained" color="primary">
-          Sign Up
+        <Button
+          className="navDiv3button"
+          variant="contained"
+          color="primary"
+          size="small"
+        >
+          {" "}
+          Sign Up{" "}
         </Button>
         <div className="navDiv3space"> </div>
         <LogInButton />
@@ -139,7 +170,7 @@ export default class NavBar extends Component {
   }
 
   render() {
-    var desktopVsMobile = this.props.width > 770;
+    var desktopVsMobile = this.props.width > 600;
     let first = desktopVsMobile ? (
       <Logo />
     ) : (

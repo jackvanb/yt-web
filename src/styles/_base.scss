@@ -1,10 +1,33 @@
+/* BUGS
+HEIGHT OF STEPS: how much of the screen do we want it? vh isn't reliable enough i think. do research;
+MAKE LOG IN LINE UP WITH RIGHT END OF STEPS
+*/
+
 // #################### General ####################
 
 body {
   background-color: #252525; //rich black
-  // **** font-family: , Tahoma, Sans-Serif;
+  font-family: "Verdana", "Helvetica", "Arial", "sans-serif";
   color: #fffafa; //snow
+  scroll-behavior: smooth;
   margin: 0;
+}
+
+h1 {
+  display: inline;
+  font-size: 350%;
+}
+
+h2 {
+  // color: #F1D695;
+}
+
+h4 {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .flex {
@@ -14,23 +37,23 @@ body {
   text-align: center;
 }
 
-// ####### Nav Bar #######
-
-.container {
-  display: flex;
-  height: 120vh;
-  justify-content: center;
+.page {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  min-width: 15em;
 }
 
+// ####### Nav Bar #######
 .navDiv1 {
   height: 80%;
   width: auto;
 }
 
-.logo {
+.smallLogo {
   height: 100%;
   width: auto;
-  content: url("../assets/logo.png");
+  content: url("../assets/smallLogo.png");
 }
 
 .dropDown {
@@ -48,6 +71,7 @@ body {
 //Or I could find a way to still use animations
 
 .menuIconClicked {
+  // width: 0;
   animation-name: clockwiseSpin90;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
@@ -57,12 +81,9 @@ body {
   transform: rotate(0deg);
   animation-name: counterSpin90;
   animation-duration: 0.5s;
-  // animation-iteration-count: 1;
 }
 
 .menuList {
-  font-family: "Impact";
-  // font-size: 110%;
   background-color: black;
   // background-color: rgba(0, 0, 0, 0.8);
   width: 0;
@@ -72,7 +93,7 @@ body {
   overflow: hidden;
 
   height: 10em;
-  // border: 1px solid snow;
+  z-index: 100;
 }
 
 .menuItem {
@@ -94,7 +115,6 @@ body {
   width: 0;
   animation-name: slideOut;
   animation-duration: 0.5s;
-  animation-fill-mode: forwards;
 }
 
 .navDiv2 {
@@ -111,10 +131,8 @@ body {
 }
 
 .navDiv3space {
-  width: 15%;
-}
-
-.navDiv3button {
+  // width: 10%;
+  width: 0.4em;
 }
 
 .navBar {
@@ -127,56 +145,389 @@ body {
   width: 100%;
   height: 4em;
   background-color: black;
-
   position: fixed;
+  z-index: 111;
 }
 
 .navSpace {
   width: 90%;
 }
 
-@media (max-width: 770px) {
+.spaceForNav {
+  width: 100%;
+  height: 5em;
+}
+
+#test {
+  background-color: blue;
+  width: 500px;
+  height: 500px;
+  position: fixed;
+  margin-top: 300px;
+}
+
+#background {
+  width: 100%;
+  height: 300%;
+  position: absolute;
+  z-index: -10;
+
+  background-color: #252525; //rich black
+  background-image: url("../assets/slate.jpg");
+  background-size: 33%;
+  background-repeat: repeat-x repeat-y;
+}
+
+.youtrition {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  font-size: 110%;
+  color: #e5ba5c;
+}
+
+.y {
+  font-size: 480%;
+}
+
+.t {
+  font-size: 480%;
+}
+
+.homePage {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-family: "Impact";
+}
+
+.stepsDiv {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  height: 55vh;
+
+  display: flex;
+  justify-content: center;
+  min-height: 20em;
+  max-width: 100em;
+}
+
+.steps {
+  border: 1px solid snow;
+  width: 90%;
+  height: 100%;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 3%;
+  z-index: 50;
+  // filter: drop-shadow(0 0 10px #ffffff);
+}
+
+.step {
+  width: 27.5%;
+  height: auto;
+  flex-direction: column;
+  color: snow;
+
+  filter: brightness(100%);
+  transition: ease-in-out 0.3s;
+}
+
+.stepImg {
+  margin-top: 0;
+  width: 60%;
+  height: auto;
+  content: url("../assets/form3.png");
+  max-width: 15em;
+}
+
+.step:hover {
+  filter: brightness(200%);
+  transition: ease-in-out 0.3s;
+}
+
+#step2 {
+  content: url("../assets/yellowPerson.png");
+}
+
+#step3 {
+  content: url("../assets/truck3.png");
+}
+
+.stepRectange {
+  width: 6%;
+  height: 3rem;
+  background-color: #4c4c4c;
+}
+
+.stepArrow {
+  width: 0;
+  height: 0;
+  border-top: 2.5rem solid transparent;
+  border-bottom: 2.5rem solid transparent;
+  border-left: 2.5rem solid #4c4c4c;
+}
+
+.missionDiv {
+  width: 100%;
+  height: 70vh;
+  flex-direction: column;
+  max-width: 100em;
+}
+
+#missionText {
+  padding-top: 0.7em;
+  color: snow;
+  transition: ease-in-out 0.3s;
+  height: 1em;
+  z-index: 100;
+  position: relative;
+}
+
+#missionText:hover {
+  color: #e5ba5c;
+  transition: ease-in-out 0.3s;
+}
+
+.missionLogo {
+  content: url("../assets/ytt2.png");
+
+  width: 50%;
+  opacity: 0.5;
+  filter: brightness(50%) drop-shadow(-10px 5px 5px #4444dd);
+  z-index: 0;
+}
+
+.statement {
+  color: snow;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.missionPbox {
+  text-align: right;
+  width: 50%;
+}
+
+.missionP {
+  width: 90%;
+  font-size: 130%;
+  z-index: 5;
+  font-family: "Futura";
+  width: 100%;
+  margin: 0.5em;
+  max-width: 25em;
+  min-width: 13em;
+}
+
+.aboutDiv {
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+
+#aboutText {
+  padding-top: 0.7em;
+  color: snow;
+  transition: ease-in-out 0.3s;
+  height: 1em;
+}
+
+#aboutText:hover {
+  color: #e5ba5c;
+  transition: ease-in-out 0.3s;
+}
+
+.aboutStatement {
+  position: relative;
+  flex-wrap: wrap;
+  width: 100%;
+
+  justify-content: space-around;
+}
+
+.aboutCard {
+  position: relative;
+  width: 40%;
+  height: 15em;
+  min-width: 30em;
+  max-width: 37em;
+  margin: 1em;
+}
+
+.aboutInnerCard {
+  width: 100%;
+  height: 100%;
+}
+
+.cardImg {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/yellowToBlue.jpg");
+  background-size: cover;
+  filter: brightness(50%) saturate(300%) grayscale(90%) opacity(0.7);
+}
+
+.cardFade {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.cardWhite {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 100, 250, 0.4);
+}
+
+.cardNotFade {
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 100, 250, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  // background-color: rgba(255,255,255, 0.8);
+}
+
+.cardPortrait {
+  z-index: 3;
+  width: 50%;
+  height: 90%;
+
+  background-image: url("../assets/prof1.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#ben {
+  background-image: url("../assets/ben.jpg");
+}
+
+#yash {
+  background-image: url("../assets/yash.jpg");
+}
+
+#jack {
+  background-image: url("../assets/jack.jpg");
+}
+
+#chandler {
+  // background-image: url("../assets/chandler.jpg");
+}
+
+.cardText {
+  z-index: 4;
+  width: 50%;
+  height: 90%;
+  padding: 0.5em;
+  font-family: "Futura";
+  color: white;
+  max-width: 15em;
+}
+
+.role {
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  h4 {
+    margin-bottom: 0;
+  }
+
+  .steps {
+    flex-direction: column;
+    width: 80%;
+    height: 90%;
+  }
+
+  .step {
+    width: 100%;
+    height: 25%;
+  }
+
+  .stepRectange {
+    width: 2rem;
+    height: 6%;
+    background-color: #4c4c4c;
+  }
+
+  .stepArrow {
+    border-bottom: none;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-top: 2rem solid #4c4c4c;
+  }
+
+  .stepImg {
+    width: auto;
+    height: 50%;
+    content: url("../assets/form3.png");
+  }
+
   .navDiv1 {
     width: 100%;
     position: absolute;
     z-index: 100;
   }
+
   .navDiv3button {
     position: relative;
     float: right;
     z-index: 101;
+    color: black;
+  }
+  .missionLogo {
+    position: absolute;
+    opacity: 0.25;
+  }
+  .missionP {
+    text-align: center;
+  }
+  .aboutCard {
+    width: 80%;
+    height: 27em;
+    min-width: 15em;
+    max-width: 20em;
+  }
+  .aboutInnerCard {
+    flex-direction: column;
+  }
+  .cardFade {
+    flex-direction: column;
+  }
+  .cardWhite {
+    width: 100%;
+    height: 50%;
+  }
+  .cardNotFade {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 100, 250, 0.4),
+      rgba(0, 0, 0, 0)
+    );
+    width: 100%;
+    height: 50%;
+  }
+  .cardPortrait {
+    width: 90%;
+    height: 40%;
+  }
+  .cardText {
+    width: 90%;
+    height: 50%;
   }
 }
 
-@media (min-width: 770px) {
+@media (min-width: 600px) {
   .menuList {
     display: none;
-  }
-}
-
-/* Nav bar bugs
-1. when screen width gets really small (find menu)
-2. typography safari warning in inspect element & others
-*/
-
-// #test {
-//     background-color: blue;
-//     width: 500px;
-//     height: 500px;
-//     position: fixed;
-//     margin-top: 300px;
-
-//     animation-name: clockwiseSpin90;
-//     animation-duration: 4s;
-//     animation-iteration-count: infinite;
-// }
-
-@keyframes example {
-  from {
-    background-color: red;
-  }
-  to {
-    background-color: yellow;
   }
 }
 

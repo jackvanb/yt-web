@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-// import PropTypes from 'prop-types';
 
 import NavBar from "./NavBar/NavBar.js";
+
+import HomePage from "./HomePage.js";
+import Second from "./Second.js";
+import { Switch, Route } from "react-router-dom";
 
 export default class App extends Component {
   constructor() {
@@ -15,6 +18,10 @@ export default class App extends Component {
     return (
       <div>
         <NavBar width={this.state.width} />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/contact" component={Second} />
+        </Switch>
       </div>
     );
   }
