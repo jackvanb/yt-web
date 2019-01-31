@@ -45,10 +45,14 @@ class OtherPageButtons extends Component {
     return (
       <div className="navDiv2 flex">
         <Button className="navDiv2button" color="primary">
-          Take The Quiz
+          <NavLink style={{ color: "inherit" }} to="/quiz">
+            Take The Quiz
+          </NavLink>
         </Button>
         <Button className="navDiv2button" color="primary">
-          Meet Our Nutritionists
+          <NavLink style={{ color: "inherit" }} to="/meet">
+            Meet Our Nutritionists
+          </NavLink>
         </Button>
         <Button className="navDiv2button" color="primary">
           <NavLink style={{ color: "inherit" }} to="/contact">
@@ -60,14 +64,6 @@ class OtherPageButtons extends Component {
   }
 }
 
-/*<Button className="navDiv2button" color="primary">
-    <NavLink to="/nutritionists">Meet Our Nutritionists</NavLink>
-</Button>
-<Button className="navDiv2button" color="primary">
-    <NavLink to="/contact">Contact Us</NavLink>
-</Button>
-*/
-
 class LogInButton extends Component {
   render() {
     return (
@@ -78,7 +74,9 @@ class LogInButton extends Component {
         size="small"
       >
         {" "}
-        Log In
+          <NavLink style={{ color: "inherit" }} to="/login">
+            Log In
+          </NavLink>
       </Button>
     );
   }
@@ -94,8 +92,11 @@ class SignUpLogInButtons extends Component {
           color="primary"
           size="small"
         >
+          <NavLink style={{ color: "inherit" }} to="/signup">
           {" "}
-          Sign Up{" "}
+            Sign Up
+          {" "}
+          </NavLink>
         </Button>
         <div className="navDiv3space"> </div>
         <LogInButton />

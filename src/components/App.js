@@ -4,6 +4,8 @@ import NavBar from "./NavBar/NavBar.js";
 
 import HomePage from "./HomePage.js";
 import Second from "./Second.js";
+import Login from "./Login.js";
+import Signup from "./Signup.js";
 import { Switch, Route } from "react-router-dom";
 
 export default class App extends Component {
@@ -21,6 +23,8 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/contact" component={Second} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
         </Switch>
       </div>
     );

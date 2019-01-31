@@ -1,3 +1,11 @@
+// -–––––––––––––––––––––––––––––––––––––––––––––––––––––––––- \\
+/* IMPROVEMENTS THAT CAN BE MADE 
+1. import the scss files for individual pages (e.g. account.scss for Login.js)
+directly in the .js file for that component
+*/
+
+// -–––––––––––––––––––––––––––––––––––––––––––––––––––––––––- \\
+
 // PACKAGE DEPENDENCIES
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -6,6 +14,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import 'normalize.css';
 import './styles/app.scss';
+import './styles/account.scss';
 
 import App from './components/App.js';
 
