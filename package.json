@@ -59,7 +59,7 @@
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dashboard": "^2.0.0",
-    "webpack-dev-server": "^3.1.4",
+    "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
@@ -71,6 +71,7 @@
     "react-dom": "^16.4.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "react-typeform-embed": "^0.2.0",
     "typeface-roboto": "0.0.54"
   }
 }

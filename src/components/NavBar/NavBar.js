@@ -45,7 +45,9 @@ class OtherPageButtons extends Component {
     return (
       <div className="navDiv2 flex">
         <Button className="navDiv2button" color="primary">
-          Take The Quiz
+          <NavLink style={{ color: "inherit" }} to="/quiz">
+            Take The Quiz
+          </NavLink>
         </Button>
         <Button className="navDiv2button" color="primary">
           Meet Our Nutritionists
