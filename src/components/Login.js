@@ -43,7 +43,7 @@ export default class Login extends Component {
                             <br />
                             <input type="text" name="password" />
                             <br />
-                            <Button variant="contained" disabled className="loginButton" color="primary"> 
+                            <Button variant="contained" className="loginButton" color="primary"> 
                               <NavLink style={{ color: "inherit" }} to="/">
                                 Log In
                               </NavLink>
