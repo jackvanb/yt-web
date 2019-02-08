@@ -19,7 +19,7 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true,
-    fontFamily: ["impact", "helvetica", "sans-serif"].join(",")
+    fontFamily: ["Futura", "helvetica", "sans-serif"].join(",")
   }
   // overrides: {
   //     Button: {

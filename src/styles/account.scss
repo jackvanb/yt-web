@@ -24,12 +24,15 @@
   font-size: 150%;
   z-index: 5;
   margin-bottom: 1em;
+
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #e5ba5c;
 }
 
 .loginButton {
   width: 50%;
   color: snow;
-  opacity: 0.5;
   transition: ease-in-out 0.3s;
 }
 

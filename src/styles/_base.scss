@@ -180,8 +180,15 @@ a {
 
 .youtrition {
   margin-top: 1em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
+  width: 100%;
+  height: 9em;
   color: #e5ba5c;
+
+  background-image: url("../assets/youtritiontext.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .y {
@@ -196,7 +203,7 @@ a {
   width: 100%;
   height: auto;
   text-align: center;
-  font-family: "Impact";
+  // font-family: "Impact";
 }
 
 .stepsDiv {
@@ -234,7 +241,7 @@ a {
   margin-top: 0;
   width: 60%;
   height: auto;
-  content: url("../assets/form3.png");
+  content: url("../assets/form4.png");
   max-width: 15em;
 }
 
@@ -244,11 +251,11 @@ a {
 }
 
 #step2 {
-  content: url("../assets/extraPeople/bluePerson.png");
+  content: url("../assets/person4.png");
 }
 
 #step3 {
-  content: url("../assets/truck3.png");
+  content: url("../assets/truck4.png");
 }
 
 .stepRectange {

@@ -9,7 +9,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 //THEME FOR NAV BAR
 const theme = createMuiTheme({
   palette: {
-    primary: { main: "#fffafa" }
+    primary: { main: "#84ADD9" }
   },
   typography: {
     useNextVariants: true,
@@ -31,25 +31,39 @@ export default class Login extends Component {
                     <div className="spaceForNav"/>
                     <div className="accountDiv flex">
                     <img className="loginLogo" />
-                        <h1 className="youtrition loginText"> 
+                        <h1 className="loginText"> 
                             Log In
                         </h1>
                         <form className="accountForm flex">
                             Username/E-mail: <br />
                             <br />
-                            <input type="text" name="email" placeholder="joel33@gmail.com" /> 
+                            <input type="text"
+                                   required 
+                                   placeholder="joel33@gmail.com" 
+                                   pattern=".{4,}"
+                                   title="4 characters minimum"/> 
                             <br />
                             Password: <br />
                             <br />
-                            <input type="text" name="password" />
+                            <input type="password" 
+                                   name="password" 
+                                   required 
+                                   pattern=".{8,}" 
+                                   title="8 characters minimum"/>
                             <br />
-                            <Button variant="contained" className="loginButton" color="primary"> 
+                            <Button type="submit" 
+                                    variant="contained" 
+                                    className="loginButton" 
+                                    color="primary"> 
                               <NavLink style={{ color: "inherit" }} to="/">
                                 Log In
                               </NavLink>
-                             </Button>
+                            </Button>
                             <br />
-                            Dont have an account? <br /> <a className="signUpHere"> Sign Up Here </a>
+                            Dont have an account? <br />
+                              <NavLink style={{ color: "inherit", textDecoration: "underline" }} to="/signup">
+                                Sign Up Here
+                              </NavLink>
                         </form>
 
                     </div>
